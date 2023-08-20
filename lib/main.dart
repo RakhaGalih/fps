@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:fps/constants/constant.dart';
+import 'package:fps/screens/login_page.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,14 +15,12 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        floatingActionButton: FloatingActionButton(onPressed: () {
-          print("Pressed!");
-        }),
-        body: Center(
-          child: Image.asset('images/logo_e-vendor.png'),
-        ),
-      ),
-    );
+        theme: ThemeData(
+            fontFamily: "Poppins",
+            primaryColor: ungu,
+            primarySwatch: Colors.indigo,
+            hoverColor: ungu,
+            focusColor: ungu),
+        home: const LoginPage());
   }
 }
