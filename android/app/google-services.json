@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1030643706231",
+    "project_id": "fps-project-374ba",
+    "storage_bucket": "fps-project-374ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030643706231:android:f0f6013435d46aa4ce9972",
+        "android_client_info": {
+          "package_name": "com.example.fps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030643706231-4ogbevdvnhcgl1sl8vm4ascjvcp6qmhg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDffEjA50VYGJEIYUeCzOoPqp10Ut6yy2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030643706231-4ogbevdvnhcgl1sl8vm4ascjvcp6qmhg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
