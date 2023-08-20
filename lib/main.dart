@@ -17,8 +17,8 @@ class MainApp extends StatelessWidget {
         floatingActionButton: FloatingActionButton(onPressed: () {
           print("Pressed!");
         }),
-        body: const Center(
-          child: Text('Hello World!'),
+        body: Center(
+          child: Image.asset('images/logo_e-vendor.png'),
         ),
       ),
     );
