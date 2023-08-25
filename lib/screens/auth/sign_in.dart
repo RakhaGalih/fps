@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:fps/constants/constant.dart';
 
-import '../components/card.dart';
+import '../../components/continue_card.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignInPage extends StatefulWidget {
+  const SignInPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignInPage> createState() => _SignInPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignInPageState extends State<SignInPage> {
   bool isChecked = false;
   bool isObscured = true;
   @override
@@ -52,6 +52,25 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                           hintText: 'Username'),
+                      style: kRegularTextStyle,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 30.0, vertical: 20),
+                          filled: true,
+                          fillColor: abu,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(40),
+                            borderSide: const BorderSide(
+                              width: 0,
+                              style: BorderStyle.none,
+                            ),
+                          ),
+                          hintText: 'No. Telepon'),
                       style: kRegularTextStyle,
                     ),
                     const SizedBox(
@@ -119,7 +138,9 @@ class _LoginPageState extends State<LoginPage> {
                       height: 20,
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushReplacementNamed(context, '/home');
+                      },
                       child: Container(
                         alignment: Alignment.center,
                         width: double.infinity,
@@ -128,7 +149,7 @@ class _LoginPageState extends State<LoginPage> {
                             color: unguGelap,
                             borderRadius: BorderRadius.circular(40)),
                         child: Text(
-                          'Sign Up',
+                          'Create Account',
                           style: kMediumTextStyle.copyWith(color: Colors.white),
                         ),
                       ),
@@ -146,7 +167,7 @@ class _LoginPageState extends State<LoginPage> {
                         Padding(
                           padding: const EdgeInsets.all(18),
                           child: Text(
-                            'or continue with',
+                            'atau lanjut dengan',
                             style: kMediumTextStyle.copyWith(color: abuText),
                           ),
                         ),
@@ -160,19 +181,19 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        CotinueCard(
+                        ContinueCard(
                           child: Image.asset('images/facebook.png'),
                         ),
                         const SizedBox(
                           width: 20,
                         ),
-                        CotinueCard(
+                        ContinueCard(
                           child: Image.asset('images/google.png'),
                         ),
                         const SizedBox(
                           width: 20,
                         ),
-                        CotinueCard(
+                        ContinueCard(
                           child: Image.asset('images/apple.png'),
                         ),
                       ],
@@ -184,14 +205,19 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Already have account? ',
+                    'Sudah punya akun? ',
                     style:
                         kMediumTextStyle.copyWith(fontSize: 15, color: abuText),
                   ),
-                  Text(
-                    'Sign in',
-                    style: kMediumTextStyle.copyWith(
-                        fontSize: 15, color: unguGelap),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, '/login');
+                    },
+                    child: Text(
+                      'Login',
+                      style: kMediumTextStyle.copyWith(
+                          fontSize: 15, color: unguGelap),
+                    ),
                   ),
                 ],
               )
