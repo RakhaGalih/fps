@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fps/components/icon_bottom_nav.dart';
+import 'package:fps/screens/history/history.dart';
 import 'package:fps/screens/home/home.dart';
 
 import '../../constants/constant.dart';
@@ -41,7 +42,16 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Column(
         children: [
-          const Expanded(child: Home()),
+          Expanded(
+              child: (onPage == 0)
+                  ? const Home()
+                  : History(
+                      backOnPressed: () {
+                        setState(() {
+                          onPage = 0;
+                        });
+                      },
+                    )),
           //botton navbar
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),

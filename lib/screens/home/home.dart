@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fps/components/card_bawah.dart';
 import 'package:fps/components/card_home.dart';
 import 'package:fps/constants/constant.dart';
+import 'package:fps/screens/home/tau_vendor.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -38,8 +39,7 @@ class _HomeState extends State<Home> {
                         children: [
                           GestureDetector(
                               onTap: () {
-                                Navigator.pushReplacementNamed(
-                                    context, '/login');
+                                Navigator.pushNamed(context, '/profile');
                               },
                               child: CircleAvatar(
                                 radius: 25,
@@ -65,9 +65,14 @@ class _HomeState extends State<Home> {
                               ],
                             ),
                           ),
-                          CircleAvatar(
-                            backgroundColor: Colors.white,
-                            child: Image.asset('images/notification.png'),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(context, '/notification');
+                            },
+                            child: CircleAvatar(
+                              backgroundColor: Colors.white,
+                              child: Image.asset('images/notification.png'),
+                            ),
                           )
                         ],
                       ),
@@ -141,17 +146,25 @@ class _HomeState extends State<Home> {
                       const SizedBox(
                         height: 10,
                       ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 5),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Text(
-                          'Tanya Tauvendor',
-                          style: kMediumTextStyle.copyWith(
-                              fontSize: 10, color: unguGelap),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const TauVendor();
+                          }));
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 5),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Text(
+                            'Tanya Tauvendor',
+                            style: kMediumTextStyle.copyWith(
+                                fontSize: 10, color: unguGelap),
+                          ),
                         ),
                       )
                     ],
