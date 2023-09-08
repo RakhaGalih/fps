@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fps/components/app_bar.dart';
+import 'package:fps/components/profile_tile.dart';
 import 'package:fps/constants/constant.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -58,11 +59,16 @@ class ProfilePage extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: abuPutih, width: 1)),
-                  child: Column(
+                  child: const Column(
                     children: [
-                      Row(
-                        children: [],
-                      )
+                      ProfileTile(title: 'Username', value: 'Lala'),
+                      ProfileTile(
+                          title: 'No.telepon atau email',
+                          value: '+6281222333444'),
+                      ProfileTile(title: 'Password', value: '••••••••••'),
+                      ProfileTile(
+                          title: 'Alamat',
+                          value: 'Jl.Sukabirus no.4, Kec.Bojongsoang'),
                     ],
                   ),
                 )
